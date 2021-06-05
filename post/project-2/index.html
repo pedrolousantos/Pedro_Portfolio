@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Project 2: Football Passes Network | Go to Main Page</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Social Network Analysis applied in Football">
+    <meta name="generator" content="Hugo 0.83.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+
+  
+  
+    <link rel="stylesheet" href="https://pedrolousantos.github.io/Pedro_Portfolio/ananke/dist/main.css_5c99d70a7725bacd4c701e995b969fea.css" >
+  
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Project 2: Football Passes Network" />
+<meta property="og:description" content="Social Network Analysis applied in Football" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://pedrolousantos.github.io/Pedro_Portfolio/post/project-2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-02-28T10:58:08-04:00" />
+<meta property="article:modified_time" content="2021-02-28T10:58:08-04:00" />
+
+<meta itemprop="name" content="Project 2: Football Passes Network">
+<meta itemprop="description" content="Social Network Analysis applied in Football"><meta itemprop="datePublished" content="2021-02-28T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2021-02-28T10:58:08-04:00" />
+<meta itemprop="wordCount" content="5573">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Project 2: Football Passes Network"/>
+<meta name="twitter:description" content="Social Network Analysis applied in Football"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://pedrolousantos.github.io/Pedro_Portfolio/images/sna.jfif');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://pedrolousantos.github.io/Pedro_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Go to Main Page
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://pedrolousantos.github.io/Pedro_Portfolio/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://pedrolousantos.github.io/Pedro_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="https://pedrolousantos.github.io/Pedro_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/pedrolousantos" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/pedrolousantos" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Project 2: Football Passes Network</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Social Network Analysis applied in Football
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://pedrolousantos.github.io/Pedro_Portfolio/post/project-2/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://pedrolousantos.github.io/Pedro_Portfolio/post/project-2/&amp;text=Project%202:%20Football%20Passes%20Network" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://pedrolousantos.github.io/Pedro_Portfolio/post/project-2/&amp;title=Project%202:%20Football%20Passes%20Network" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Project 2: Football Passes Network</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-02-28T10:58:08-04:00">February 28, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>In this assignment from the Social Network Analysis course I used Python to explore key concepts of graph theory using football matches open data from Statsbomb.</p>
+<h1 id="part-1-introduction">Part 1: Introduction</h1>
+<p>Football should not be simply analyzed and explained by capturing and interpreting the classical individual player&rsquo;s metrics and abilities. Football is complex and its complexity makes individually collected data unproductive to interpret accurately a team&rsquo;s performance. Football is a sport where all the team players can be considered as a complex network whose nodes (players) interact with the aim of overcoming the opponent network.</p>
+<p>The passing networks are based on a approach to the graphs theory, where it is considered the existence of: 1) individual entities (nodes or vertices) which belong to a population or specific group, and 2) the connections between them (edges) in terms an interaction to measure. All this in a spatial and temporal frame. So, if we translate this to football, the nodes are the players of a same team and the edges are the passes between them, considering the pitch as the spatial frame and the duration of one game (generally) the temporal frame.</p>
+<p>Thanks to its nature, the disponibility of events data in football games has increased exponentially, allowing analysts to measure the impact and behavior patterns of a team as a whole while counting together with the role of each single player.</p>
+<p>A football passing network is a resource of information for how all the players contribute to the team&rsquo;s strategy by passing the ball between each other. We opted to create a weighted and directed network due to the nature of these passing events and also the increase amount of information it can be extracted from this type of network when compared with unweigthed or undirected networks. The passes between players have a direction (from one player to another) and the weight of the edges is based on the number of passes between the nodes (players).</p>
+<p>The usage of network metrics helps us to interpret how important players are in a game. We will analyze and compare these metrics between different teams in an event to find out the intepretation and existing correlation between the network metrics and the teams strategy and how it influences the game events.</p>
+<h1 id="part-2-exploratory-analysis">Part 2: Exploratory Analysis</h1>
+<h2 id="21-reading-the-json-files">2.1. Reading the json files</h2>
+<p>Statsbomb open data repositary (<a href="https://github.com/statsbomb/open-data">https://github.com/statsbomb/open-data</a>) provides Json files from different games. This data is divided in match lineups (<a href="https://github.com/statsbomb/open-data/tree/master/data/lineups">https://github.com/statsbomb/open-data/tree/master/data/lineups</a>) correponding to the list of players who played in each match and events (<a href="https://github.com/statsbomb/open-data/tree/master/data/events">https://github.com/statsbomb/open-data/tree/master/data/events</a>) corresponding to different game occurences which include the passes which are the occurences we want to study.</p>
+<p>We are using the datasets corresponding to files 18241.json from lineups and events link above, with have the lineups and events of the game between Real Madrid and Atlético de Madrid, the Champions League final held on 24 of May of 2014 which was a thrilling game where Real Madrid won 4-1 in the overtime, following a 93rd-minute header by Sergio Ramos, which cancelled out Diego Godín&rsquo;s first-half at 36 minutes goal.</p>
+<h3 id="importing-the-libraries-to-read-the-files">Importing the libraries to read the files</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#a6e22e">pandas</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">pd</span>
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">numpy</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">np</span>
+<span style="color:#a6e22e">from</span> <span style="color:#a6e22e">pandas</span>.<span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">json</span> <span style="color:#f92672">import</span> <span style="color:#a6e22e">json_normalize</span>
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">json</span></code></pre></div>
+<h3 id="assigning-the-paths-in-the-directory-to-find-the-files-the-match_id-and-the-teams-names">Assigning the paths in the directory to find the files, the match_id and the teams names</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">lineups_path</span> = <span style="color:#e6db74">&#34;lineups/{0}.json&#34;</span>
+<span style="color:#a6e22e">events_path</span> = <span style="color:#e6db74">&#34;events/{0}.json&#34;</span>
+
+<span style="color:#a6e22e">match_id</span> = <span style="color:#ae81ff">18241</span>
+<span style="color:#a6e22e">team_name1</span> = <span style="color:#e6db74">&#34;Atlético Madrid&#34;</span>
+<span style="color:#a6e22e">team_name2</span> = <span style="color:#e6db74">&#34;Real Madrid&#34;</span></code></pre></div>
+<h3 id="21-a-players-name-dictionary">2.1. a) Player&rsquo;s Name Dictionary</h3>
+<p>Creating a dictionary with the names and nicknames from players from both teams who played in the match corresponding to the match_id.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">with</span> <span style="color:#a6e22e">open</span>(<span style="color:#a6e22e">lineups_path</span>.<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">match_id</span>), <span style="color:#a6e22e">encoding</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">utf</span><span style="color:#f92672">-</span><span style="color:#ae81ff">8</span><span style="color:#960050;background-color:#1e0010">&#39;</span>) <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">fh</span>:
+    <span style="color:#a6e22e">lineups</span> = <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">load</span>(<span style="color:#a6e22e">fh</span>)
+<span style="color:#a6e22e">names_dict</span> = {<span style="color:#a6e22e">player</span>[<span style="color:#e6db74">&#34;player_name&#34;</span>]: <span style="color:#a6e22e">player</span>[<span style="color:#e6db74">&#34;player_nickname&#34;</span>]
+              <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">team</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">lineups</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">player</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">team</span>[<span style="color:#e6db74">&#34;lineup&#34;</span>]}</code></pre></div>
+<h3 id="21-b-match-events-dataframe">2.1. b) Match Events Dataframe</h3>
+<p>Creating a dataframe with events data from the json file corresponding to the match_id.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">with</span> <span style="color:#a6e22e">open</span>(<span style="color:#a6e22e">events_path</span>.<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">match_id</span>), <span style="color:#a6e22e">encoding</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">utf</span><span style="color:#f92672">-</span><span style="color:#ae81ff">8</span><span style="color:#960050;background-color:#1e0010">&#39;</span>) <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">fh</span>:
+    <span style="color:#a6e22e">events</span> = <span style="color:#a6e22e">json</span>.<span style="color:#a6e22e">load</span>(<span style="color:#a6e22e">fh</span>)
+<span style="color:#a6e22e">df_events</span> = <span style="color:#a6e22e">json_normalize</span>(<span style="color:#a6e22e">events</span>, <span style="color:#a6e22e">sep</span>=<span style="color:#e6db74">&#34;_&#34;</span>).<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">match_id</span>=<span style="color:#a6e22e">match_id</span>)
+
+<span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">head</span>()</code></pre></div>
+<h3 id="22-setting-the-temporal-frame">2.2. Setting the temporal frame</h3>
+<p>While some studies focus only on the duration of the game until the first substitution or red card (so that all players have the same amount of minutes), we decided to analyze the full match and in our conclusions include details if the player was substituded or came in the game later.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">max_minutes</span> = <span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">minute</span>.<span style="color:#a6e22e">max</span>() <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Max</span> <span style="color:#a6e22e">minutes</span> <span style="color:#a6e22e">Counting</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">overtime</span>
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">In</span> <span style="color:#66d9ef">case</span> <span style="color:#a6e22e">we</span> <span style="color:#a6e22e">wanted</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">change</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">temporal</span> <span style="color:#a6e22e">dataframe</span>:
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">first_red_card_minute</span> = <span style="color:#a6e22e">df_events</span>[<span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">foul_committed_card_name</span>.<span style="color:#a6e22e">isin</span>([<span style="color:#e6db74">&#34;Second Yellow&#34;</span>, <span style="color:#e6db74">&#34;Red Card&#34;</span>])].<span style="color:#a6e22e">minute</span>.<span style="color:#a6e22e">min</span>()
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">first_substitution_minute</span> = <span style="color:#a6e22e">df_events</span>[<span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">type_name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Substitution&#34;</span>].<span style="color:#a6e22e">minute</span>.<span style="color:#a6e22e">min</span>()
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">max_minute</span> = <span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">minute</span>.<span style="color:#a6e22e">max</span>()
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">num_minutes</span> = <span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">first_substitution_minute</span>, <span style="color:#a6e22e">first_red_card_minute</span>, <span style="color:#a6e22e">max_minute</span>)
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">max_minutes</span> = <span style="color:#a6e22e">num_minutes</span>
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">first_half</span> = <span style="color:#ae81ff">47</span>
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">second_half</span> = <span style="color:#ae81ff">92</span></code></pre></div>
+<h3 id="23-a-atlético-de-madrid---completed-passes">2.3. a) Atlético de Madrid - Completed Passes</h3>
+<p>Filtering Atlético de Madrid successfully completed passes</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Subsetting</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">events</span> <span style="color:#a6e22e">dataset</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">creating</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">passes</span> <span style="color:#a6e22e">dataset</span>
+<span style="color:#a6e22e">df_passesATM</span> = <span style="color:#a6e22e">df_events</span>[(<span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">type_name</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;Pass&#34;</span>) <span style="color:#f92672">&amp;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">filtering</span> <span style="color:#a6e22e">only</span> <span style="color:#a6e22e">events</span> <span style="color:#a6e22e">of</span> <span style="color:#66d9ef">type</span> <span style="color:#e6db74">&#34;pass&#34;</span>
+                      (<span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">pass_outcome_name</span>.<span style="color:#a6e22e">isna</span>()) <span style="color:#f92672">&amp;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Pass</span> <span style="color:#a6e22e">outcome</span> <span style="color:#a6e22e">na</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">completed</span> <span style="color:#a6e22e">passes</span>
+                      (<span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">team_name</span> <span style="color:#f92672">==</span> <span style="color:#a6e22e">team_name1</span>) <span style="color:#f92672">&amp;</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">filtering</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">team</span> <span style="color:#a6e22e">name</span>
+                      (<span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">minute</span> &lt; <span style="color:#a6e22e">max_minutes</span>) <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Full</span> <span style="color:#a6e22e">game</span>
+                     ].copy()
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">If</span> <span style="color:#a6e22e">available</span>, <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">player</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">nickname</span> <span style="color:#a6e22e">instead</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">full</span> <span style="color:#a6e22e">name</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">optimize</span> <span style="color:#a6e22e">space</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">plot</span>
+<span style="color:#a6e22e">df_passesATM</span>[<span style="color:#e6db74">&#34;pass_recipient_name&#34;</span>] = <span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">pass_recipient_name</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">lambda</span> <span style="color:#a6e22e">x</span>: <span style="color:#a6e22e">names_dict</span>[<span style="color:#a6e22e">x</span>] <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">names_dict</span>[<span style="color:#a6e22e">x</span>] <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">x</span>)
+<span style="color:#a6e22e">df_passesATM</span>[<span style="color:#e6db74">&#34;player_name&#34;</span>] = <span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">player_name</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">lambda</span> <span style="color:#a6e22e">x</span>: <span style="color:#a6e22e">names_dict</span>[<span style="color:#a6e22e">x</span>] <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">names_dict</span>[<span style="color:#a6e22e">x</span>] <span style="color:#66d9ef">else</span> <span style="color:#a6e22e">x</span>)
+
+<span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">head</span>()</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna1.JPG"/>
+</figure>
+</p>
+<p>As we can see in the table above and in the info below, the Atlético de Madrid passing dataset contains 296 successfully completed passes.</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">info</span>()</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna2.JPG"/>
+</figure>
+</p>
+<h3 id="23-b-real-madrid---completed-passes">2.3. b) Real Madrid - Completed Passes</h3>
+<p>Filtering Real Madrid successfully completed passes</p>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna3.JPG"/>
+</figure>
+
+<p>As we can see in the table above and in the info below, the Real Madrid passing dataset contains 623 successfully completed passes.</p>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna4.JPG"/>
+</figure>
+
+<h3 id="24-a-atlético-de-madrid---player-positions">2.4. a) Atlético de Madrid - Player Positions</h3>
+<p>Setting players positions with their median pass event&rsquo;s location</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">def</span> <span style="color:#a6e22e">_statsbomb_to_point</span>(<span style="color:#a6e22e">location</span>, <span style="color:#a6e22e">max_width</span>=<span style="color:#ae81ff">120</span>, <span style="color:#a6e22e">max_height</span>=<span style="color:#ae81ff">80</span>):
+    <span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#a6e22e">Convert</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">point</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">coordinates</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">StatsBomb</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">to</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">range</span>.
+    <span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">location</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">/</span> <span style="color:#a6e22e">max_width</span>, <span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(<span style="color:#a6e22e">location</span>[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">/</span> <span style="color:#a6e22e">max_height</span>)
+
+<span style="color:#a6e22e">df_passesATM</span>[<span style="color:#e6db74">&#34;origin_pos_x&#34;</span>] = <span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">lambda</span> <span style="color:#a6e22e">x</span>: <span style="color:#a6e22e">_statsbomb_to_point</span>(<span style="color:#a6e22e">x</span>)[<span style="color:#ae81ff">0</span>])
+<span style="color:#a6e22e">df_passesATM</span>[<span style="color:#e6db74">&#34;origin_pos_y&#34;</span>] = <span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">lambda</span> <span style="color:#a6e22e">x</span>: <span style="color:#a6e22e">_statsbomb_to_point</span>(<span style="color:#a6e22e">x</span>)[<span style="color:#ae81ff">1</span>])
+<span style="color:#a6e22e">player_positionATM</span> = <span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">groupby</span>(<span style="color:#e6db74">&#34;player_name&#34;</span>).<span style="color:#a6e22e">agg</span>({<span style="color:#e6db74">&#34;origin_pos_x&#34;</span>: <span style="color:#e6db74">&#34;median&#34;</span>, <span style="color:#e6db74">&#34;origin_pos_y&#34;</span>: <span style="color:#e6db74">&#34;median&#34;</span>})
+
+<span style="color:#a6e22e">player_positionATM</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna5.JPG"/>
+</figure>
+</p>
+<h3 id="24-b-real-madrid---player-positions">2.4. b) Real Madrid - Player Positions</h3>
+<p>Setting players positions with their median pass event&rsquo;s location</p>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna6.JPG"/>
+</figure>
+
+<h3 id="25-a-atlético-de-madrid---passes-sent-by-player">2.5. a) Atlético de Madrid - Passes sent by Player</h3>
+<p>Number of passes sent by each player</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Counting</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">number</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">origin</span> <span style="color:#a6e22e">passes</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">each</span> <span style="color:#a6e22e">player</span>
+<span style="color:#a6e22e">player_pass_countATM</span> = <span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">groupby</span>(<span style="color:#e6db74">&#34;player_name&#34;</span>).<span style="color:#a6e22e">size</span>().<span style="color:#a6e22e">to_frame</span>(<span style="color:#e6db74">&#34;num_passes&#34;</span>)
+<span style="color:#a6e22e">player_pass_countATM</span> = <span style="color:#a6e22e">player_pass_countATM</span>.<span style="color:#a6e22e">rename</span>(<span style="color:#a6e22e">columns</span>={<span style="color:#e6db74">&#34;num_passes&#34;</span>:<span style="color:#e6db74">&#34;Number of Passes Sent&#34;</span>})
+<span style="color:#a6e22e">player_pass_countATM</span>.<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Number</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">Passes</span> <span style="color:#a6e22e">Sent</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna7.JPG"/>
+</figure>
+</p>
+<h3 id="25-b-real-madrid---passes-sent-by-player">2.5. b) Real Madrid - Passes sent by Player</h3>
+<p>Number of passes sent by each player</p>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna8.JPG"/>
+</figure>
+
+<h3 id="26-a-atlético-de-madrid---pass-conections-edges">2.6. a) Atlético de Madrid - Pass Conections (Edges)</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Grouping</span> <span style="color:#a6e22e">our</span> <span style="color:#a6e22e">dataset</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">pass</span> <span style="color:#a6e22e">sender</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">pass</span> <span style="color:#a6e22e">recipient</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">count</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">number</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">passes</span> (<span style="color:#a6e22e">weight</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">each</span> <span style="color:#a6e22e">edge</span>)
+<span style="color:#a6e22e">df1</span> = <span style="color:#a6e22e">df_passesATM</span>.<span style="color:#a6e22e">groupby</span>([<span style="color:#e6db74">&#34;player_name&#34;</span>,<span style="color:#e6db74">&#34;pass_recipient_name&#34;</span>]).<span style="color:#a6e22e">count</span>()
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Resetting</span> <span style="color:#a6e22e">index</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">use</span> <span style="color:#a6e22e">index</span> <span style="color:#a6e22e">columns</span> (<span style="color:#a6e22e">sender</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">recipient</span>) <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">first</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">second</span> <span style="color:#a6e22e">column</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">our</span> <span style="color:#a6e22e">df</span>
+<span style="color:#a6e22e">df1</span> = <span style="color:#a6e22e">df1</span>.<span style="color:#a6e22e">reset_index</span>()
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Subsetting</span> <span style="color:#a6e22e">desired</span> <span style="color:#a6e22e">columns</span>:
+<span style="color:#a6e22e">df2</span> = <span style="color:#a6e22e">df1</span>[[<span style="color:#e6db74">&#34;player_name&#34;</span>,<span style="color:#e6db74">&#34;pass_recipient_name&#34;</span>,<span style="color:#e6db74">&#34;id&#34;</span>]]
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Renaming</span> <span style="color:#a6e22e">our</span> <span style="color:#a6e22e">columns</span>
+<span style="color:#a6e22e">pair_passATM</span> = <span style="color:#a6e22e">df2</span>.<span style="color:#a6e22e">rename</span>(<span style="color:#a6e22e">columns</span>={<span style="color:#e6db74">&#34;player_name&#34;</span>: <span style="color:#e6db74">&#34;from&#34;</span>,<span style="color:#e6db74">&#34;pass_recipient_name&#34;</span>:<span style="color:#e6db74">&#34;to&#34;</span>, <span style="color:#e6db74">&#34;id&#34;</span>:<span style="color:#e6db74">&#34;weight&#34;</span>})
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">df</span> <span style="color:#a6e22e">with</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">correct</span> <span style="color:#a6e22e">format</span> <span style="color:#a6e22e">ready</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">graph</span>
+<span style="color:#a6e22e">pair_passATM</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna9.JPG"/>
+</figure>
+</p>
+<h3 id="26-b-real-madrid---pass-conections-edges">2.6. b) Real Madrid - Pass Conections (Edges)</h3>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna10.JPG"/>
+</figure>
+
+<h2 id="part-3-graph-analysis">Part 3: Graph Analysis</h2>
+<h3 id="31-set-the-graph-backround">3.1. Set the graph backround</h3>
+<p>The below setup which draws a pitch, which will later be used as backround of our graph, is taken from other football passing network analysis available in the following link <a href="https://github.com/Friends-of-Tracking-Data-FoTD/passing-networks-in-python">https://github.com/Friends-of-Tracking-Data-FoTD/passing-networks-in-python</a>. This analysis was the basis of our work, to which we made modifications and added further features.</p>
+<p>In our graph visualition section we customized the plot with our own attributes.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">import</span> <span style="color:#a6e22e">matplotlib</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">mpl</span>
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">matplotlib</span>.<span style="color:#a6e22e">patches</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">patches</span>
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">_point_to_meters</span>(<span style="color:#a6e22e">p</span>):
+    <span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#a6e22e">Convert</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">point</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">s</span> <span style="color:#a6e22e">coordinates</span> <span style="color:#a6e22e">from</span> <span style="color:#a6e22e">a</span> <span style="color:#ae81ff">0</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">meters</span>.
+    <span style="color:#e6db74">&#39;&#39;&#39;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">np</span>.<span style="color:#a6e22e">array</span>([<span style="color:#a6e22e">p</span>[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">p</span>[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">height</span>])
+
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">draw_pitch</span>(<span style="color:#a6e22e">min_x</span>=<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">max_x</span>=<span style="color:#ae81ff">1</span>):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Plot an empty horizontal football pitch, returning Matplotlib&#39;s ax object so we can keep adding elements to it.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Parameters
+</span><span style="color:#e6db74">    -----------
+</span><span style="color:#e6db74">        min_x: float value from 0 to &#39;max_x&#39; to choose a subsection of the pitch. Default value is 0.
+</span><span style="color:#e6db74">        max_x: float value from &#39;min_x&#39; to 1 to choose a subsection of the pitch. Default value is 1.
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">    Returns
+</span><span style="color:#e6db74">    -----------
+</span><span style="color:#e6db74">       ax : Matplotlib&#39;s axis object to keetp adding elements on the pitch.
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#a6e22e">background_color</span> = <span style="color:#a6e22e">backgroundcolor</span>
+    <span style="color:#a6e22e">lines_color</span> = <span style="color:#a6e22e">linescolor</span>
+    <span style="color:#a6e22e">fig_size</span> = <span style="color:#a6e22e">figsize</span>
+
+    <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">This</span> <span style="color:#a6e22e">allows</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">plot</span> <span style="color:#a6e22e">a</span> <span style="color:#a6e22e">subsection</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">pitch</span>
+    <span style="color:#a6e22e">ratio</span> = <span style="color:#a6e22e">height</span> <span style="color:#f92672">/</span> float((<span style="color:#a6e22e">width</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">max_x</span>)<span style="color:#f92672">-</span>(<span style="color:#a6e22e">width</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">min_x</span>))
+    <span style="color:#a6e22e">f</span>, <span style="color:#a6e22e">ax</span> = <span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">subplots</span>(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">figsize</span>=(<span style="color:#a6e22e">fig_size</span>, <span style="color:#a6e22e">fig_size</span><span style="color:#f92672">*</span><span style="color:#a6e22e">ratio</span>), <span style="color:#a6e22e">dpi</span>=<span style="color:#ae81ff">100</span>)
+
+    <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">set_ylim</span>([<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">height</span>])
+    <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">set_xlim</span>([<span style="color:#a6e22e">width</span><span style="color:#f92672">*</span><span style="color:#a6e22e">min_x</span>, <span style="color:#a6e22e">width</span><span style="color:#f92672">*</span><span style="color:#a6e22e">max_x</span>])
+    <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">add_patch</span>(<span style="color:#a6e22e">patches</span>.<span style="color:#a6e22e">Rectangle</span>((<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>), <span style="color:#a6e22e">width</span>, <span style="color:#a6e22e">height</span>, <span style="color:#a6e22e">color</span>=<span style="color:#a6e22e">background_color</span>))
+
+    <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Plot</span> <span style="color:#a6e22e">outer</span> <span style="color:#a6e22e">lines</span>
+    <span style="color:#a6e22e">line_pts</span> = [
+        [<span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>])],  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">left</span> <span style="color:#a6e22e">line</span>
+        [<span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>])],  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">right</span> <span style="color:#a6e22e">line</span>
+        [<span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>]), <span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>])],  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">top</span> <span style="color:#a6e22e">line</span>
+        [<span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>])],  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">bottom</span> <span style="color:#a6e22e">line</span>
+    ]
+
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">line_pt</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">line_pts</span>:
+        <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">plot</span>([<span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]], [<span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]], <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">w</span><span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
+                <span style="color:#a6e22e">alpha</span>=<span style="color:#ae81ff">0.8</span>, <span style="color:#a6e22e">lw</span>=<span style="color:#ae81ff">1.5</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">color</span>=<span style="color:#a6e22e">lines_color</span>)
+
+    <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Plot</span> <span style="color:#a6e22e">boxes</span>
+    <span style="color:#a6e22e">line_pts</span> = [
+        [<span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">0</span>]), <span style="color:#a6e22e">_point_to_meters</span>([<span style="color:#ae81ff">0.5</span>, <span style="color:#ae81ff">1</span>])],  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">center</span> <span style="color:#a6e22e">line</span>
+
+        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">left</span> <span style="color:#a6e22e">box</span>
+        [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">24.85</span>], [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">2.85</span>]],
+        [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">13.85</span>], [<span style="color:#ae81ff">16.5</span>, <span style="color:#ae81ff">13.85</span>]],
+        [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">54.15</span>], [<span style="color:#ae81ff">16.5</span>, <span style="color:#ae81ff">54.15</span>]],
+        [[<span style="color:#ae81ff">16.5</span>, <span style="color:#ae81ff">13.85</span>], [<span style="color:#ae81ff">16.5</span>, <span style="color:#ae81ff">54.15</span>]],
+
+        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">left</span> <span style="color:#a6e22e">goal</span>
+        [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">24.85</span>], [<span style="color:#ae81ff">5.5</span>, <span style="color:#ae81ff">24.85</span>]],
+        [[<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">43.15</span>], [<span style="color:#ae81ff">5.5</span>, <span style="color:#ae81ff">43.15</span>]],
+        [[<span style="color:#ae81ff">5.5</span>, <span style="color:#ae81ff">24.85</span>], [<span style="color:#ae81ff">5.5</span>, <span style="color:#ae81ff">43.15</span>]],
+
+        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">right</span> <span style="color:#a6e22e">box</span>
+        [[<span style="color:#ae81ff">105</span>, <span style="color:#ae81ff">24.85</span>], [<span style="color:#ae81ff">105</span>, <span style="color:#ae81ff">2.85</span>]],
+        [[<span style="color:#ae81ff">105</span>, <span style="color:#ae81ff">13.85</span>], [<span style="color:#ae81ff">88.5</span>, <span style="color:#ae81ff">13.85</span>]],
+        [[<span style="color:#ae81ff">105</span>, <span style="color:#ae81ff">54.15</span>], [<span style="color:#ae81ff">88.5</span>, <span style="color:#ae81ff">54.15</span>]],
+        [[<span style="color:#ae81ff">88.5</span>, <span style="color:#ae81ff">13.85</span>], [<span style="color:#ae81ff">88.5</span>, <span style="color:#ae81ff">54.15</span>]],
+
+        <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">right</span> <span style="color:#a6e22e">goal</span>
+        [[<span style="color:#ae81ff">105</span>, <span style="color:#ae81ff">24.85</span>], [<span style="color:#ae81ff">99.5</span>, <span style="color:#ae81ff">24.85</span>]],
+        [[<span style="color:#ae81ff">105</span>, <span style="color:#ae81ff">43.15</span>], [<span style="color:#ae81ff">99.5</span>, <span style="color:#ae81ff">43.15</span>]],
+        [[<span style="color:#ae81ff">99.5</span>, <span style="color:#ae81ff">24.85</span>], [<span style="color:#ae81ff">99.5</span>, <span style="color:#ae81ff">43.14</span>]]
+    ]
+
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">line_pt</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">line_pts</span>:
+        <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">plot</span>([<span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>], <span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]], [<span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>], <span style="color:#a6e22e">line_pt</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]], <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">w</span><span style="color:#f92672">-</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
+                <span style="color:#a6e22e">alpha</span>=<span style="color:#ae81ff">0.8</span>, <span style="color:#a6e22e">lw</span>=<span style="color:#ae81ff">1.5</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">color</span>=<span style="color:#a6e22e">lines_color</span>)
+
+    <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Plot</span> <span style="color:#a6e22e">circles</span>
+    <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">add_patch</span>(<span style="color:#a6e22e">patches</span>.<span style="color:#a6e22e">Wedge</span>((<span style="color:#ae81ff">94.0</span>, <span style="color:#ae81ff">34.0</span>), <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">130</span>, <span style="color:#ae81ff">230</span>, <span style="color:#a6e22e">fill</span>=<span style="color:#a6e22e">True</span>, <span style="color:#a6e22e">edgecolor</span>=<span style="color:#a6e22e">lines_color</span>,
+                               <span style="color:#a6e22e">facecolor</span>=<span style="color:#a6e22e">lines_color</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">width</span>=<span style="color:#ae81ff">0.02</span>, <span style="color:#a6e22e">alpha</span>=<span style="color:#ae81ff">0.8</span>))
+
+    <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">add_patch</span>(<span style="color:#a6e22e">patches</span>.<span style="color:#a6e22e">Wedge</span>((<span style="color:#ae81ff">11.0</span>, <span style="color:#ae81ff">34.0</span>), <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">310</span>, <span style="color:#ae81ff">50</span>, <span style="color:#a6e22e">fill</span>=<span style="color:#a6e22e">True</span>, <span style="color:#a6e22e">edgecolor</span>=<span style="color:#a6e22e">lines_color</span>,
+                               <span style="color:#a6e22e">facecolor</span>=<span style="color:#a6e22e">lines_color</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">width</span>=<span style="color:#ae81ff">0.02</span>, <span style="color:#a6e22e">alpha</span>=<span style="color:#ae81ff">0.8</span>))
+
+    <span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">add_patch</span>(<span style="color:#a6e22e">patches</span>.<span style="color:#a6e22e">Wedge</span>((<span style="color:#ae81ff">52.5</span>, <span style="color:#ae81ff">34</span>), <span style="color:#ae81ff">9.5</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">360</span>, <span style="color:#a6e22e">fill</span>=<span style="color:#a6e22e">True</span>, <span style="color:#a6e22e">edgecolor</span>=<span style="color:#a6e22e">lines_color</span>,
+                               <span style="color:#a6e22e">facecolor</span>=<span style="color:#a6e22e">lines_color</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">4</span>, <span style="color:#a6e22e">width</span>=<span style="color:#ae81ff">0.02</span>, <span style="color:#a6e22e">alpha</span>=<span style="color:#ae81ff">0.8</span>))
+
+    <span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">axis</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">off</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ax</span></code></pre></div>
+<h3 id="32-a--atlético-de-madrid---graph-creation">3.2. a)  Atlético de Madrid - Graph Creation</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Importing</span> <span style="color:#a6e22e">libraries</span>
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">matplotlib</span>.<span style="color:#a6e22e">pyplot</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">plt</span>
+<span style="color:#f92672">import</span> <span style="color:#a6e22e">networkx</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">nx</span>
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Converting</span> <span style="color:#a6e22e">df</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">list</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">pass</span> <span style="color:#a6e22e">our</span> <span style="color:#a6e22e">edges</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">correct</span> <span style="color:#a6e22e">format</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">DiGraph</span> <span style="color:#a6e22e">function</span>
+<span style="color:#a6e22e">pair_pass_list</span> = <span style="color:#a6e22e">pair_passATM</span>.<span style="color:#a6e22e">values</span>.<span style="color:#a6e22e">tolist</span>()
+
+<span style="color:#a6e22e">G</span> =  <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">DiGraph</span>()
+<span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">add_weighted_edges_from</span>(<span style="color:#a6e22e">pair_pass_list</span>)
+<span style="color:#a6e22e">GATM</span> = <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">DiGraph</span>()
+<span style="color:#a6e22e">GATM</span>.<span style="color:#a6e22e">add_nodes_from</span>(<span style="color:#a6e22e">sorted</span>(<span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">nodes</span>(<span style="color:#a6e22e">data</span>=<span style="color:#a6e22e">True</span>))) <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Nodes</span> <span style="color:#a6e22e">sorted</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">alphabetical</span> <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">previous</span> <span style="color:#a6e22e">dataframes</span>
+<span style="color:#a6e22e">GATM</span>.<span style="color:#a6e22e">add_edges_from</span>(<span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">edges</span>(<span style="color:#a6e22e">data</span>=<span style="color:#a6e22e">True</span>))
+print(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">info</span>(<span style="color:#a6e22e">GATM</span>))</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna11.JPG"/>
+</figure>
+</p>
+<p>As we can see in the info above, the GATM graph (Atlético de Madrid graph) is a directed graph with 14 nodes, 91 edges and average degrees (in and out) of 6.5 (the average degree is simply the number of edges divided by the number vertices). Further analysis in next sections.</p>
+<h3 id="32-b--real-madrid---graph-creation">3.2. b)  Real Madrid - Graph Creation</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Converting</span> <span style="color:#a6e22e">df</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">list</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">pass</span> <span style="color:#a6e22e">our</span> <span style="color:#a6e22e">edges</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">correct</span> <span style="color:#a6e22e">format</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">DiGraph</span> <span style="color:#a6e22e">function</span>
+<span style="color:#a6e22e">pair_pass_list</span> = <span style="color:#a6e22e">pair_passRMA</span>.<span style="color:#a6e22e">values</span>.<span style="color:#a6e22e">tolist</span>()
+
+<span style="color:#a6e22e">G</span> =  <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">DiGraph</span>()
+<span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">add_weighted_edges_from</span>(<span style="color:#a6e22e">pair_pass_list</span>)
+<span style="color:#a6e22e">GRMA</span> = <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">DiGraph</span>()
+<span style="color:#a6e22e">GRMA</span>.<span style="color:#a6e22e">add_nodes_from</span>(<span style="color:#a6e22e">sorted</span>(<span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">nodes</span>(<span style="color:#a6e22e">data</span>=<span style="color:#a6e22e">True</span>))) <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Nodes</span> <span style="color:#a6e22e">sorted</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">same</span> <span style="color:#a6e22e">alphabetical</span> <span style="color:#a6e22e">order</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">previous</span> <span style="color:#a6e22e">dataframes</span>
+<span style="color:#a6e22e">GRMA</span>.<span style="color:#a6e22e">add_edges_from</span>(<span style="color:#a6e22e">G</span>.<span style="color:#a6e22e">edges</span>(<span style="color:#a6e22e">data</span>=<span style="color:#a6e22e">True</span>))
+print(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">info</span>(<span style="color:#a6e22e">GRMA</span>))</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna12.JPG"/>
+</figure>
+</p>
+<p>As we can see in the info above, the GRMA graph (Real Madrid graph) is a directed graph with 14 nodes, 130 edges and average degrees (in and out) of 9.2857 (the average degree is simply the number of edges divided by the number vertices). Further analysis in next sections.</p>
+<h3 id="33-adjacency-matrix">3.3. Adjacency Matrix</h3>
+<p>Every network can be expressed mathematically in the form of an adjacency matrix. In these matrices the rows and columns are assigned to the nodes in the network and the presence of an edge is symbolised by a numerical value. A network with undirected, unweighted edges will be represented by a symmetric matrix containing only the values 1 and 0 to represent the presence and absence of connections, respectively. In our case, directed and weighted network, different numerical values in the matrix express these more complex relationships.</p>
+<h3 id="33-a--atlético-de-madrid---adjacency-matrix">3.3. a)  Atlético de Madrid - Adjacency Matrix</h3>
+<p>The edge colors in the graph will be defined by the pair wegihts. Therefore, in the Atlético de Madrid graph in next section the darker edges will be the ones from Koke to Adrián López (12), from Adrián López to Koke (11), from Filipe Luis to Koke (10) and from Juanfran to Gabi (10).</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">matrix</span> = <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">adjacency_matrix</span>(<span style="color:#a6e22e">GATM</span>, <span style="color:#a6e22e">nodelist</span>=<span style="color:#a6e22e">GATM</span>.<span style="color:#a6e22e">nodes</span>()).<span style="color:#a6e22e">todense</span>()
+<span style="color:#a6e22e">matrixdf</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>(<span style="color:#a6e22e">matrix</span>, <span style="color:#a6e22e">index</span>=<span style="color:#a6e22e">GATM</span>.<span style="color:#a6e22e">nodes</span>(), <span style="color:#a6e22e">columns</span>=<span style="color:#a6e22e">GATM</span>.<span style="color:#a6e22e">nodes</span>())
+<span style="color:#a6e22e">matrixdf</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna13.JPG"/>
+</figure>
+</p>
+<h3 id="33-b--real-madrid---adjacency-matrix">3.3. b)  Real Madrid - Adjacency Matrix</h3>
+<p>The edge colors in the graph will be defined by the pair wegihts. Therefore, in the Real Madrid graph in next section the darker edges will be the ones from Marcelo to Ángel Di María (19), from Sergio Ramos to Ángel Di María (19), from Sergio Ramos to Marcelo (18) and from Luka Modric to Daniel Carvajal (16).</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">matrix</span> = <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">adjacency_matrix</span>(<span style="color:#a6e22e">GRMA</span>, <span style="color:#a6e22e">nodelist</span>=<span style="color:#a6e22e">GRMA</span>.<span style="color:#a6e22e">nodes</span>()).<span style="color:#a6e22e">todense</span>()
+<span style="color:#a6e22e">matrixdf</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>(<span style="color:#a6e22e">matrix</span>, <span style="color:#a6e22e">index</span>=<span style="color:#a6e22e">GRMA</span>.<span style="color:#a6e22e">nodes</span>(), <span style="color:#a6e22e">columns</span>=<span style="color:#a6e22e">GRMA</span>.<span style="color:#a6e22e">nodes</span>())
+<span style="color:#a6e22e">matrixdf</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna14.JPG"/>
+</figure>
+</p>
+<h3 id="34-a--atlético-de-madrid---graph-visualization">3.4. a)  Atlético de Madrid - Graph Visualization</h3>
+<p>In the graph we highlight the location of the nodes defined by the median average pass location from each player, the size of the nodes defined by the number of total passes sent and the color of the edges defined by the weight of the passes between the pair.</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">player_position</span> = <span style="color:#a6e22e">player_positionATM</span>.copy()
+<span style="color:#a6e22e">player_pass_count</span> = <span style="color:#a6e22e">player_pass_countATM</span>.copy()
+<span style="color:#a6e22e">g</span>=<span style="color:#a6e22e">GATM</span>.copy()
+
+<span style="color:#a6e22e">backgroundcolor</span> = <span style="color:#e6db74">&#34;lightgreen&#34;</span>
+<span style="color:#a6e22e">linescolor</span> = <span style="color:#e6db74">&#34;white&#34;</span>
+<span style="color:#a6e22e">figsize</span> = <span style="color:#ae81ff">12</span>
+<span style="color:#a6e22e">width</span> = <span style="color:#ae81ff">105</span>
+<span style="color:#a6e22e">height</span> = <span style="color:#ae81ff">68</span>
+
+<span style="color:#a6e22e">player_position_graph</span> = <span style="color:#a6e22e">player_position</span>.copy()
+<span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_y&#34;</span>] = <span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_y&#34;</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">height</span>
+<span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_x&#34;</span>] = <span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_x&#34;</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">width</span>
+
+<span style="color:#a6e22e">player_position_graph</span> = <span style="color:#a6e22e">player_position_graph</span>.<span style="color:#a6e22e">reset_index</span>()
+<span style="color:#a6e22e">pos</span> = <span style="color:#a6e22e">player_position_graph</span>.<span style="color:#a6e22e">set_index</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>).<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">to_dict</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">list</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+<span style="color:#a6e22e">pos</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">positions</span> <span style="color:#a6e22e">based</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">player</span> <span style="color:#a6e22e">median</span> <span style="color:#a6e22e">pass</span> <span style="color:#a6e22e">position</span>
+
+<span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Passes Normalized&#34;</span>] = <span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Number of Passes Sent&#34;</span>]<span style="color:#f92672">/</span><span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Number of Passes Sent&#34;</span>].<span style="color:#a6e22e">max</span>()
+
+<span style="color:#a6e22e">ax</span> = <span style="color:#a6e22e">draw_pitch</span>()
+
+<span style="color:#a6e22e">opponent_team</span> = [<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">x</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">team_name</span>.<span style="color:#a6e22e">unique</span>() <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">team_name1</span>][<span style="color:#ae81ff">0</span>]
+<span style="color:#a6e22e">title</span> =<span style="color:#e6db74">&#34;{0}&#39;s passing network against {1} (24 May 2014)&#34;</span>.<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">team_name1</span>, <span style="color:#a6e22e">opponent_team</span>)
+<span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">set_title</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">loc</span>=<span style="color:#e6db74">&#34;left&#34;</span>)
+
+<span style="color:#a6e22e">legend</span> = <span style="color:#e6db74">&#34;Player Location: Pass Median Origin\nNode Size: Total Passes Sent\nEdge Color: Pair Passes Weight&#34;</span>
+<span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">annotate</span>(<span style="color:#a6e22e">legend</span>, <span style="color:#a6e22e">xy</span>=(<span style="color:#ae81ff">0.01</span><span style="color:#f92672">*</span><span style="color:#a6e22e">width</span>, <span style="color:#ae81ff">0.02</span><span style="color:#f92672">*</span><span style="color:#a6e22e">height</span>), <span style="color:#a6e22e">ha</span>=<span style="color:#e6db74">&#34;left&#34;</span>, <span style="color:#a6e22e">va</span>=<span style="color:#e6db74">&#34;bottom&#34;</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">7</span>, <span style="color:#a6e22e">fontsize</span>=<span style="color:#ae81ff">10</span>)
+
+<span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;@ Group D&#34;</span>, <span style="color:#a6e22e">xy</span>=(<span style="color:#ae81ff">0.99</span><span style="color:#f92672">*</span><span style="color:#a6e22e">width</span>, <span style="color:#ae81ff">0.02</span><span style="color:#f92672">*</span><span style="color:#a6e22e">height</span>), <span style="color:#a6e22e">ha</span>=<span style="color:#e6db74">&#34;right&#34;</span>, <span style="color:#a6e22e">va</span>=<span style="color:#e6db74">&#34;bottom&#34;</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">7</span>, <span style="color:#a6e22e">fontsize</span>=<span style="color:#ae81ff">10</span>)
+
+<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">draw_networkx</span>(
+    <span style="color:#a6e22e">g</span>,
+    <span style="color:#a6e22e">pos</span>, <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">positions</span> <span style="color:#a6e22e">defined</span> <span style="color:#a6e22e">above</span>
+    <span style="color:#a6e22e">with_labels</span>=<span style="color:#a6e22e">True</span>,
+    <span style="color:#a6e22e">horizontalalignment</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">center</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
+    <span style="color:#a6e22e">font_weight</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">bold</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
+    <span style="color:#a6e22e">font_size</span>=<span style="color:#ae81ff">11</span>,
+    <span style="color:#a6e22e">node_size</span>= <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Passes Normalized&#34;</span>],  <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">node</span> <span style="color:#a6e22e">size</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">passes</span> <span style="color:#a6e22e">sent</span>
+    <span style="color:#a6e22e">node_color</span>= <span style="color:#e6db74">&#34;Red&#34;</span>,
+    <span style="color:#a6e22e">alpha</span> = <span style="color:#ae81ff">0.9</span>,
+    <span style="color:#a6e22e">edge_color</span>=<span style="color:#a6e22e">pair_passATM</span>.<span style="color:#a6e22e">iloc</span>[:,<span style="color:#ae81ff">2</span>], <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">color</span> <span style="color:#a6e22e">edges</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">pair</span> <span style="color:#a6e22e">passes</span> <span style="color:#a6e22e">weight</span>
+    <span style="color:#a6e22e">edge_cmap</span>=<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">Blues</span>,
+    <span style="color:#a6e22e">arrowsize</span>=<span style="color:#ae81ff">20</span>,
+    )</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna15.JPG"/>
+</figure>
+</p>
+<h3 id="34-b--real-madrid---graph-visualization">3.4. b)  Real Madrid - Graph Visualization</h3>
+<p>In the graph we highlight the location of the nodes defined by the median average pass location from each player, the size of the nodes defined by the number of total passes sent and the color of the edges defined by the weight of the passes between the pair.</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">player_position</span> = <span style="color:#a6e22e">player_positionRMA</span>.copy()
+<span style="color:#a6e22e">player_pass_count</span> = <span style="color:#a6e22e">player_pass_countRMA</span>.copy()
+<span style="color:#a6e22e">g</span>=<span style="color:#a6e22e">GRMA</span>.copy()
+
+<span style="color:#a6e22e">backgroundcolor</span> = <span style="color:#e6db74">&#34;lightgreen&#34;</span>
+<span style="color:#a6e22e">linescolor</span> = <span style="color:#e6db74">&#34;white&#34;</span>
+<span style="color:#a6e22e">figsize</span> = <span style="color:#ae81ff">12</span>
+<span style="color:#a6e22e">width</span> = <span style="color:#ae81ff">105</span>
+<span style="color:#a6e22e">height</span> = <span style="color:#ae81ff">68</span>
+
+<span style="color:#a6e22e">player_position_graph</span> = <span style="color:#a6e22e">player_position</span>.copy()
+<span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_y&#34;</span>] = <span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_y&#34;</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">height</span>
+<span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_x&#34;</span>] = <span style="color:#a6e22e">player_position_graph</span>[<span style="color:#e6db74">&#34;origin_pos_x&#34;</span>]<span style="color:#f92672">*</span><span style="color:#a6e22e">width</span>
+
+<span style="color:#a6e22e">player_position_graph</span> = <span style="color:#a6e22e">player_position_graph</span>.<span style="color:#a6e22e">reset_index</span>()
+<span style="color:#a6e22e">pos</span> = <span style="color:#a6e22e">player_position_graph</span>.<span style="color:#a6e22e">set_index</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>).<span style="color:#a6e22e">T</span>.<span style="color:#a6e22e">to_dict</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">list</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+<span style="color:#a6e22e">pos</span> <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">positions</span> <span style="color:#a6e22e">based</span> <span style="color:#a6e22e">on</span> <span style="color:#a6e22e">player</span> <span style="color:#a6e22e">median</span> <span style="color:#a6e22e">pass</span> <span style="color:#a6e22e">position</span>
+
+<span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Passes Normalized&#34;</span>] = <span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Number of Passes Sent&#34;</span>]<span style="color:#f92672">/</span><span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Number of Passes Sent&#34;</span>].<span style="color:#a6e22e">max</span>()
+
+<span style="color:#a6e22e">ax</span> = <span style="color:#a6e22e">draw_pitch</span>()
+
+<span style="color:#a6e22e">opponent_team</span> = [<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">x</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">df_events</span>.<span style="color:#a6e22e">team_name</span>.<span style="color:#a6e22e">unique</span>() <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">!=</span> <span style="color:#a6e22e">team_name2</span>][<span style="color:#ae81ff">0</span>]
+<span style="color:#a6e22e">title</span> =<span style="color:#e6db74">&#34;{0}&#39;s passing network against {1} (24 May 2014)&#34;</span>.<span style="color:#a6e22e">format</span>(<span style="color:#a6e22e">team_name2</span>, <span style="color:#a6e22e">opponent_team</span>)
+<span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">set_title</span>(<span style="color:#a6e22e">title</span>, <span style="color:#a6e22e">loc</span>=<span style="color:#e6db74">&#34;left&#34;</span>)
+
+<span style="color:#a6e22e">legend</span> = <span style="color:#e6db74">&#34;Player Location: Pass Median Origin\nNode Size: Total Passes Sent\nEdge Color: Pair Passes Weight&#34;</span>
+<span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">annotate</span>(<span style="color:#a6e22e">legend</span>, <span style="color:#a6e22e">xy</span>=(<span style="color:#ae81ff">0.01</span><span style="color:#f92672">*</span><span style="color:#a6e22e">width</span>, <span style="color:#ae81ff">0.02</span><span style="color:#f92672">*</span><span style="color:#a6e22e">height</span>), <span style="color:#a6e22e">ha</span>=<span style="color:#e6db74">&#34;left&#34;</span>, <span style="color:#a6e22e">va</span>=<span style="color:#e6db74">&#34;bottom&#34;</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">7</span>, <span style="color:#a6e22e">fontsize</span>=<span style="color:#ae81ff">10</span>)
+
+<span style="color:#a6e22e">ax</span>.<span style="color:#a6e22e">annotate</span>(<span style="color:#e6db74">&#34;@ Group D&#34;</span>, <span style="color:#a6e22e">xy</span>=(<span style="color:#ae81ff">0.99</span><span style="color:#f92672">*</span><span style="color:#a6e22e">width</span>, <span style="color:#ae81ff">0.02</span><span style="color:#f92672">*</span><span style="color:#a6e22e">height</span>), <span style="color:#a6e22e">ha</span>=<span style="color:#e6db74">&#34;right&#34;</span>, <span style="color:#a6e22e">va</span>=<span style="color:#e6db74">&#34;bottom&#34;</span>, <span style="color:#a6e22e">zorder</span>=<span style="color:#ae81ff">7</span>, <span style="color:#a6e22e">fontsize</span>=<span style="color:#ae81ff">10</span>)
+
+<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">draw_networkx</span>(
+    <span style="color:#a6e22e">g</span>,
+    <span style="color:#a6e22e">pos</span>, <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">positions</span> <span style="color:#a6e22e">defined</span> <span style="color:#a6e22e">above</span>
+    <span style="color:#a6e22e">with_labels</span>=<span style="color:#a6e22e">True</span>,
+    <span style="color:#a6e22e">horizontalalignment</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">center</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
+    <span style="color:#a6e22e">font_weight</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">bold</span><span style="color:#960050;background-color:#1e0010">&#39;</span>,
+    <span style="color:#a6e22e">font_size</span>=<span style="color:#ae81ff">11</span>,
+    <span style="color:#a6e22e">node_size</span>= <span style="color:#ae81ff">1000</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">player_pass_count</span>[<span style="color:#e6db74">&#34;Passes Normalized&#34;</span>], <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">node</span> <span style="color:#a6e22e">size</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">passes</span> <span style="color:#a6e22e">sent</span>
+    <span style="color:#a6e22e">node_color</span>= <span style="color:#e6db74">&#34;white&#34;</span>,
+    <span style="color:#a6e22e">alpha</span> = <span style="color:#ae81ff">0.9</span>,
+    <span style="color:#a6e22e">edge_color</span>=<span style="color:#a6e22e">pair_passRMA</span>.<span style="color:#a6e22e">iloc</span>[:,<span style="color:#ae81ff">2</span>], <span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">color</span> <span style="color:#a6e22e">edges</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">pair</span> <span style="color:#a6e22e">passes</span> <span style="color:#a6e22e">weight</span>
+    <span style="color:#a6e22e">edge_cmap</span>=<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">cm</span>.<span style="color:#a6e22e">Blues</span>,
+    <span style="color:#a6e22e">arrowsize</span>=<span style="color:#ae81ff">20</span>,
+    )</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna16.JPG"/>
+</figure>
+</p>
+<h3 id="35-centrality-measures">3.5 Centrality Measures</h3>
+<p>Centrality defines how important a node is within a network. Below some definitions of different metrics used which will be further analyzed later.</p>
+<p><em><strong>Degree centrality:</strong></em> defines central nodes are those that have most links with other nodes. In directed graphs the degree centrality is defined based only in the out-degree.</p>
+<p><em><strong>Eigenvector centrality:</strong></em> generalizes degree centrality by incorporating the importance of the neighbors.</p>
+<p><em><strong>Closeness centrality:</strong></em> an actor 𝐼 is central if it can easily interact with all other actors, that is the distance 𝑑(𝑖,𝑗) to all other actors 𝑗 is short. Closeness centrality indicates how close a node is to all other nodes in the network. It is calculated as inverse of the average of the shortest path length from the node to every other node in the network.</p>
+<p><em><strong>Betweennes centrality:</strong></em> central actors are those that have “control” of other pairs of actors. Betweenness centrality measures the extent to which a vertex lies on shortest paths between other vertices. Vertices with high betweenness may have considerable influence within a network.</p>
+<h3 id="35-a--atlético-de-madrid---centrality-measures">3.5. a)  Atlético de Madrid - Centrality Measures</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Degree</span>
+<span style="color:#a6e22e">centrality_measures</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>(<span style="color:#a6e22e">GATM</span>.<span style="color:#a6e22e">in_degree</span>(), <span style="color:#a6e22e">columns</span>=[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Degree</span><span style="color:#960050;background-color:#1e0010">&#39;</span>]).<span style="color:#a6e22e">set_index</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)\
+                                                                            .<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Degree</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Out</span> <span style="color:#a6e22e">degree</span>
+<span style="color:#a6e22e">centrality_measures</span>[<span style="color:#e6db74">&#34;Out degree&#34;</span>] = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>(<span style="color:#a6e22e">GATM</span>.<span style="color:#a6e22e">out_degree</span>(), <span style="color:#a6e22e">columns</span>=[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Degree</span><span style="color:#960050;background-color:#1e0010">&#39;</span>]).<span style="color:#a6e22e">set_index</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)\
+                                                                            .<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Degree</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Total</span> <span style="color:#a6e22e">Degree</span>
+<span style="color:#a6e22e">centrality_measures</span>[<span style="color:#e6db74">&#34;Total Degree&#34;</span>] = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">degree</span>(<span style="color:#a6e22e">GATM</span>), <span style="color:#a6e22e">columns</span>=[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>, <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Degree</span><span style="color:#960050;background-color:#1e0010">&#39;</span>]).<span style="color:#a6e22e">set_index</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)\
+                                                                            .<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">In</span> <span style="color:#a6e22e">Degree</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#a6e22e">centrality_measures</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Degree</span> <span style="color:#a6e22e">Normalized</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>.<span style="color:#a6e22e">from_dict</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">degree_centrality</span>(<span style="color:#a6e22e">GATM</span>), <span style="color:#a6e22e">orient</span>= <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">index</span><span style="color:#960050;background-color:#1e0010">&#39;</span>).<span style="color:#a6e22e">iloc</span>[:,<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">round</span>(<span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">centrality_measures</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Betweenness</span> <span style="color:#a6e22e">Normalized</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>.<span style="color:#a6e22e">from_dict</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">betweenness_centrality</span>(<span style="color:#a6e22e">GATM</span>), <span style="color:#a6e22e">orient</span>= <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">index</span><span style="color:#960050;background-color:#1e0010">&#39;</span>).<span style="color:#a6e22e">iloc</span>[:,<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">round</span>(<span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">centrality_measures</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Closeness</span> <span style="color:#a6e22e">Normalized</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>.<span style="color:#a6e22e">from_dict</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">closeness_centrality</span>(<span style="color:#a6e22e">GATM</span>), <span style="color:#a6e22e">orient</span>= <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">index</span><span style="color:#960050;background-color:#1e0010">&#39;</span>).<span style="color:#a6e22e">iloc</span>[:,<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">round</span>(<span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">centrality_measures</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Eigenvector</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>.<span style="color:#a6e22e">from_dict</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">eigenvector_centrality</span>(<span style="color:#a6e22e">GATM</span>), <span style="color:#a6e22e">orient</span>= <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">index</span><span style="color:#960050;background-color:#1e0010">&#39;</span>).<span style="color:#a6e22e">iloc</span>[:,<span style="color:#ae81ff">0</span>].<span style="color:#a6e22e">round</span>(<span style="color:#ae81ff">2</span>)
+
+<span style="color:#a6e22e">centrality_measures_GATM</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">merge</span>(<span style="color:#a6e22e">player_pass_countATM</span>, <span style="color:#a6e22e">centrality_measures</span>, <span style="color:#a6e22e">on</span>=<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">player_name</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)\
+                             .<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Number</span> <span style="color:#a6e22e">of</span> <span style="color:#a6e22e">Passes</span> <span style="color:#a6e22e">Sent</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+<span style="color:#a6e22e">centrality_measures_GATM</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna17.JPG"/>
+</figure>
+</p>
+<p>We can see in the table above different centrality measures and the folowing conclusion can be made:</p>
+<ul>
+<li>Gabi has the higher number of passes sent (54). Then 54 is the denominator for calculation of all passes normalized scores.</li>
+<li>Since the total number of players is 14, the maximum in-degree and out-degree is 13 for each player, and the maximum total degree 26. We should mention also that the out-degree (number of different players to which passes were sent) needs to be lower than he first column number of passes sent.</li>
+<li>Koke has the maximum in-degree (12) and maximum total degree (22), while Tiago has the higher out-degree (11). This mean Koke reaceived passes from a higher number of different players while Tiago was the player sending passes to a higher number os different players. Taking into consideration the definition for directed graphs, Tiago would have the highest degree centrality instead of Koke.</li>
+<li>Diego Costa number of passes (1) is explained by the fact he was injured in the beginning of the game and was substituted in minute 9 of the game by Adrian López.</li>
+</ul>
+<h3 id="35-b--real-madrid---centrality-measures">3.5. b)  Real Madrid - Centrality Measures</h3>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna18.JPG"/>
+</figure>
+
+<p>We can see in the table above different centrality measures and the folowing conclusion can be made:</p>
+<ul>
+<li>Sérgio Ramos has the higher number of passes sent (94). Then 94 is the denominator for calculation of all passes normalized scores.</li>
+<li>Since the total number of players is 14, the maximum in-degree and out-degree is 13 for each player, and the maximum total degree 26. We should mention also that the out-degree (number of different players to which passes were sent) needs to be lower than he first column number of passes sent.</li>
+<li>3 players (Carvajal, Di Maria and Cristiano) share the maximum in-degree (12), while Cristiano Ronaldo has alone the maximum out-degree (13) which gives him a total degree of 25 meaning there was only 1 player to which he did not receive a pass from which from the adjacency table we can see it was Khedira who was substituted at minute 59.</li>
+<li>Álvaro Morata lower number of passes (5) is explained by the fact he got in the game only at minute 79 substituting Karim Benzema.</li>
+</ul>
+<h3 id="36-combined-metrics-analysis">3.6. Combined Metrics Analysis</h3>
+<p>After merging both data frames with the centrality measures for both teams we can start comparing how they impacted the events in the game. Some considerations but be made before going on:</p>
+<ul>
+<li>First, we have to take into account that in this game, Real Madrid completed 623 passes and Atlético de Madrid completed 296 passes. Although not directly, the fact that Real Madrid has more than twice the completed passes of Atletico will be reflected in the values of the centrality measures.
+<ul>
+<li>Influencing this difference in passes was the evolution of the result, with Real Madrid loosing the game since minute 36 until minute 93 so more looking to score a goal at least in most of the game.</li>
+</ul>
+</li>
+<li>Substitutions perfomed by each team affect centrality metrics as if a player stays a low amount of time in the game he has less time to connect with other players and also these other players have less probability of connecting with him.
+<ul>
+<li>As already mentioned an early substitution happenned with Diego Costa from Atletico de Madrid being substituted in minute 9 of the game by Adrian López, with the result of only Koke being able to connect with him.</li>
+</ul>
+</li>
+</ul>
+<p>Information about all substitutions:</p>
+<ul>
+<li>Atlético de Madrid: 9min (Diego Costa out, Adrian López in), 66min (Raúl Garcia out, José Sosa in), 83min (Filipe Luis out, Toby Alderweireld in).</li>
+<li>Real Madrid: 59min (Fábio Coentrão and Sami Khedira out, Marcelo and Isco in), 79min (Karim Benzema out and Alvaro Morata in).</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">centrality_measures_GRMA</span>[<span style="color:#e6db74">&#34;Team&#34;</span>] = <span style="color:#e6db74">&#34;RMA&#34;</span>
+<span style="color:#a6e22e">centrality_measures_GATM</span>[<span style="color:#e6db74">&#34;Team&#34;</span>] = <span style="color:#e6db74">&#34;ATM&#34;</span>
+<span style="color:#a6e22e">centrality_measures_concat</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">concat</span>([<span style="color:#a6e22e">centrality_measures_GRMA</span>, <span style="color:#a6e22e">centrality_measures_GATM</span>])</code></pre></div>
+<h3 id="36-a-sorting-by-degree-normalized">3.6. a) Sorting by Degree Normalized</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">centrality_measures_concat</span>.<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Degree</span> <span style="color:#a6e22e">Normalized</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">highlight_col</span>(<span style="color:#a6e22e">x</span>):
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">copy</span> <span style="color:#a6e22e">df</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">new</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">changed</span>
+    <span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">x</span>.copy()
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">condition</span>
+    <span style="color:#a6e22e">mask</span> = <span style="color:#a6e22e">centrality_measures_total</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Team</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ATM&#34;</span>
+    <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#a6e22e">mask</span>, :] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">red</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#960050;background-color:#1e0010">~</span><span style="color:#a6e22e">mask</span>,:] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">white</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">centrality_measures_total</span>
+
+<span style="color:#a6e22e">centrality_measures_events</span> = <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">highlight_col</span>,<span style="color:#a6e22e">axis</span>=<span style="color:#a6e22e">None</span>)
+<span style="color:#a6e22e">centrality_measures_events</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna19.JPG"/>
+</figure>
+</p>
+<p>The combined dataframe is sorted by degree centrality normalized, which means players were sorted by the interaction they have within their network, with top players (nodes) in the list being the ones that have the most links (connections) with other players.</p>
+<p>Main conclusions:</p>
+<ul>
+<li>In our case, the value for degree normalized is the same as dividing the total degree by 13, which gives a maximum of 2 if a player achieved the maximum total degree of 26 which did not happen (the closer was Cristiano Ronaldo with 25). If only using out-degree the maximum would be 1 which would be achieved only by Cristiano Ronaldo and remaining conclusions would be similar.</li>
+<li>By loooking at the number os passes sent we can see clearly it has no direct implication in centrality as Sérgio Ramos with 94 passes is only in 6th place.</li>
+<li>Out of the 10 players with the highest degree centrality, 7 played for Real Madrid and 3 for Atlético, this informs that Real Madrid players were more connected.</li>
+</ul>
+<h3 id="36-b-sorting-by-eigenvector-centrality">3.6. b) Sorting by Eigenvector Centrality</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">centrality_measures_concat</span>.<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Eigenvector</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+ <span style="color:#a6e22e">def</span> <span style="color:#a6e22e">highlight_col</span>(<span style="color:#a6e22e">x</span>):
+     <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">copy</span> <span style="color:#a6e22e">df</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">new</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">changed</span>
+     <span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">x</span>.copy()
+     <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">condition</span>
+     <span style="color:#a6e22e">mask</span> = <span style="color:#a6e22e">centrality_measures_total</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Team</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ATM&#34;</span>
+     <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#a6e22e">mask</span>, :] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">red</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+     <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#960050;background-color:#1e0010">~</span><span style="color:#a6e22e">mask</span>,:] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">white</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">centrality_measures_total</span>
+
+ <span style="color:#a6e22e">centrality_measures_events</span> = <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">highlight_col</span>,<span style="color:#a6e22e">axis</span>=<span style="color:#a6e22e">None</span>)
+ <span style="color:#a6e22e">centrality_measures_events</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna20.JPG"/>
+</figure>
+</p>
+<p>Eigenvector centrality is more sophisticated than the degree centrality as it measures the influence of each node in the network. Two factors positively impact the value of this metric, a higher number of direct connections with other players and to be connected with other nodes which also have a high centrality. In this sense, important players are highly connected to other important players of their team.</p>
+<p>Main conclusions:</p>
+<ul>
+<li>From the 10 top players with higher eigenvector centrality, 6 played for Atlético and 4 for Real Madrid, the distribution here is more balanced, but this tells us that Atlético players with a higher weight in the team, tend to directly connect more within each other. In other words, Atlético top players network&rsquo;s importance is more centred on their most relevant players which on average accumulate more importance than the Real Madrid players with higher importance.</li>
+</ul>
+<p>This metric can be used by both teams to adjust their strategy:</p>
+<ul>
+<li>Real Madrid could focus on covering the important  Atlético players and avoid these connections by breaking the interactions between this main core of nodes.</li>
+<li>Atlético could change the strategy and try to balance the importance of its network by encouraging the important players to interact more with players with lower eigenvector centrality that play in closer positions, increasing the importance for these players and making a better distribution of the importance in their network.</li>
+</ul>
+<h3 id="36-c-sorting-by-closeness-normalized">3.6. c) Sorting by Closeness Normalized</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">centrality_measures_concat</span>.<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Closeness</span> <span style="color:#a6e22e">Normalized</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">highlight_col</span>(<span style="color:#a6e22e">x</span>):
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">copy</span> <span style="color:#a6e22e">df</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">new</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">changed</span>
+    <span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">x</span>.copy()
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">condition</span>
+    <span style="color:#a6e22e">mask</span> = <span style="color:#a6e22e">centrality_measures_total</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Team</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ATM&#34;</span>
+    <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#a6e22e">mask</span>, :] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">red</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#960050;background-color:#1e0010">~</span><span style="color:#a6e22e">mask</span>,:] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">white</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">centrality_measures_total</span>
+
+<span style="color:#a6e22e">centrality_measures_events</span> = <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">highlight_col</span>,<span style="color:#a6e22e">axis</span>=<span style="color:#a6e22e">None</span>)
+<span style="color:#a6e22e">centrality_measures_events</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna21.JPG"/>
+</figure>
+</p>
+<p>Closeness centrality gives us an idea on how close and well-connected  the nodes are within a network. It helps us detect those nodes which are able to spread information through its network more efficiently, therefore, players with a higher closeness centrality have a higher impact on the passing network in terms of moving the ball more efficiently among the passing network.</p>
+<p>Main conclusions:</p>
+<ul>
+<li>8 out of the 10 players with higher closeness centrality are Real Madrid players, this defines that their players were more easily reachable during the game than Atlético players.</li>
+</ul>
+<h3 id="36-d-sorting-by-betweenness-normalized">3.6. d) Sorting by Betweenness Normalized</h3>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">centrality_measures_concat</span>.<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Betweenness</span> <span style="color:#a6e22e">Normalized</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">highlight_col</span>(<span style="color:#a6e22e">x</span>):
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">copy</span> <span style="color:#a6e22e">df</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">new</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">changed</span>
+    <span style="color:#a6e22e">centrality_measures_total</span> = <span style="color:#a6e22e">x</span>.copy()
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">condition</span>
+    <span style="color:#a6e22e">mask</span> = <span style="color:#a6e22e">centrality_measures_total</span>[<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Team</span><span style="color:#960050;background-color:#1e0010">&#39;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ATM&#34;</span>
+    <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#a6e22e">mask</span>, :] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">red</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#960050;background-color:#1e0010">~</span><span style="color:#a6e22e">mask</span>,:] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">white</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">centrality_measures_total</span>
+
+<span style="color:#a6e22e">centrality_measures_events</span> = <span style="color:#a6e22e">centrality_measures_total</span>.<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">highlight_col</span>,<span style="color:#a6e22e">axis</span>=<span style="color:#a6e22e">None</span>)
+<span style="color:#a6e22e">centrality_measures_events</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna22.JPG"/>
+</figure>
+</p>
+<p>Betweenness doesn&rsquo;t measure how well-connected a player is in the network, but how the passing/ball flow depends on that particular player.</p>
+<p>In the passing network, this metric measures the impact of removing that player from the game, the lower this metric, the less involved the player is in the game.</p>
+<p>From a tactical point of view, a team should always seek betweenness scores that are evenly distributed among their players. Having high betweenness scores concentrated in few players indicates a dependency on a few important players.</p>
+<p>Teams with low betweenness scores are teams with a well balanced passing strategy.</p>
+<p>Main conclusions:</p>
+<ul>
+<li>4 out of the top 5 players with higher betweenness centrality were Atlético player, we can say that Real Madrid players were more equally involved in the game sharing the node importance more evenly between them.</li>
+</ul>
+<h3 id="36-e-pagerank-centrality">3.6. e) PageRank Centrality</h3>
+<p>PageRank (PR) is an algorithm used by Google Search to rank web pages in their search engine results. PageRank is a way of measuring the importance of website pages.</p>
+<p>PageRank follows the following intuitive idea:</p>
+<ul>
+<li>The links to page 𝐼 is a conveyance of prestige ( authority ) of the page</li>
+<li>The more in links a page 𝐼 receives , the more prestige the page 𝐼 has</li>
+<li>The pages that link to page 𝐼also have their own prestige score</li>
+<li>A page of a higher prestige pointing to 𝐼 is more important than a page of a lower prestige pointing to 𝐼</li>
+</ul>
+<p>So, in the end, a page is important if it is pointed to by other important pages.</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Atlético</span> <span style="color:#a6e22e">de</span> <span style="color:#a6e22e">Madrid</span>
+<span style="color:#a6e22e">pagerank</span> = <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">pagerank</span>(<span style="color:#a6e22e">GATM</span>, <span style="color:#a6e22e">weight</span>=<span style="color:#e6db74">&#34;weight&#34;</span>)
+<span style="color:#a6e22e">pagerankGATM</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>(<span style="color:#a6e22e">pagerank</span>.<span style="color:#a6e22e">items</span>(),<span style="color:#a6e22e">columns</span>=[<span style="color:#e6db74">&#34;Player&#34;</span>,<span style="color:#e6db74">&#34;Pagerank_coeff&#34;</span>]).<span style="color:#a6e22e">sort_values</span>(<span style="color:#a6e22e">by</span>=[<span style="color:#e6db74">&#34;Pagerank_coeff&#34;</span>],<span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Real</span> <span style="color:#a6e22e">Madrid</span>
+<span style="color:#a6e22e">pagerank</span> = <span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">pagerank</span>(<span style="color:#a6e22e">GRMA</span>, <span style="color:#a6e22e">weight</span>=<span style="color:#e6db74">&#34;weight&#34;</span>)
+<span style="color:#a6e22e">pagerankGRMA</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">DataFrame</span>(<span style="color:#a6e22e">pagerank</span>.<span style="color:#a6e22e">items</span>(),<span style="color:#a6e22e">columns</span>=[<span style="color:#e6db74">&#34;Player&#34;</span>,<span style="color:#e6db74">&#34;Pagerank_coeff&#34;</span>]).<span style="color:#a6e22e">sort_values</span>(<span style="color:#a6e22e">by</span>=[<span style="color:#e6db74">&#34;Pagerank_coeff&#34;</span>],<span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Merge</span>
+<span style="color:#a6e22e">pagerankGRMA</span>[<span style="color:#e6db74">&#34;Team&#34;</span>] = <span style="color:#e6db74">&#34;RMA&#34;</span>
+<span style="color:#a6e22e">pagerankGATM</span>[<span style="color:#e6db74">&#34;Team&#34;</span>] = <span style="color:#e6db74">&#34;ATM&#34;</span>
+<span style="color:#a6e22e">pagerank_concat</span> = <span style="color:#a6e22e">pd</span>.<span style="color:#a6e22e">concat</span>([<span style="color:#a6e22e">pagerankGATM</span>, <span style="color:#a6e22e">pagerankGRMA</span>])
+
+<span style="color:#a6e22e">pagerank_total</span> = <span style="color:#a6e22e">pagerank_concat</span>.<span style="color:#a6e22e">sort_values</span>([<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Pagerank_coeff</span><span style="color:#960050;background-color:#1e0010">&#39;</span>], <span style="color:#a6e22e">ascending</span>=<span style="color:#a6e22e">False</span>)
+<span style="color:#a6e22e">pagerank_total</span>
+
+<span style="color:#a6e22e">def</span> <span style="color:#a6e22e">highlight_col</span>(<span style="color:#a6e22e">x</span>):
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">copy</span> <span style="color:#a6e22e">df</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">new</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">original</span> <span style="color:#a6e22e">data</span> <span style="color:#a6e22e">are</span> <span style="color:#a6e22e">not</span> <span style="color:#a6e22e">changed</span>
+    <span style="color:#a6e22e">pagerank_total</span> = <span style="color:#a6e22e">x</span>.copy()
+    <span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">set</span> <span style="color:#a6e22e">by</span> <span style="color:#a6e22e">condition</span>
+    <span style="color:#a6e22e">mask</span> = <span style="color:#a6e22e">pagerank_total</span>[<span style="color:#e6db74">&#34;Team&#34;</span>] <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;ATM&#34;</span>
+    <span style="color:#a6e22e">pagerank_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#a6e22e">mask</span>, :] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">red</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#a6e22e">pagerank_total</span>.<span style="color:#a6e22e">loc</span>[<span style="color:#960050;background-color:#1e0010">~</span><span style="color:#a6e22e">mask</span>,:] = <span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">background</span><span style="color:#f92672">-</span><span style="color:#a6e22e">color</span>: <span style="color:#a6e22e">white</span><span style="color:#960050;background-color:#1e0010">&#39;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pagerank_total</span>
+
+<span style="color:#a6e22e">pagerank_total_sorted</span> = <span style="color:#a6e22e">pagerank_total</span>.<span style="color:#a6e22e">reset_index</span>(<span style="color:#a6e22e">drop</span>=<span style="color:#a6e22e">True</span>).<span style="color:#a6e22e">style</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">highlight_col</span>,<span style="color:#a6e22e">axis</span>=<span style="color:#a6e22e">None</span>)
+<span style="color:#a6e22e">pagerank_total_sorted</span></code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna23.JPG"/>
+</figure>
+</p>
+<p>Pagerank in a football passes network can be defined as popularity or importance in the sense that a player is popular if he receives passes from other popular players.</p>
+<p>Pagerank centrality assigns to each player the probability that he will have the ball after a few passes have been made, the score of a player depends on the scores of all his teammates.</p>
+<p>The 3 players with a higher pagerank coefficient are Atlético players which capture considerably high values if we compare them with the rest of the players in their team. This is telling us that the important players in Atlético were connecting more between each other concentrating the importance distribution between them.</p>
+<h3 id="36-f-transitivity--clustering-coefficient">3.6. f) Transitivity &amp; Clustering Coefficient</h3>
+<p>Transitivity is the overall probability for the network to have adjacent nodes interconnected, thus revealing the existence of tightly connected communities (or clusters, subgroups, cliques). It is calculated by the ratio between the observed number of closed triplets and the maximum possible number of closed triplets in the graph. Complex networks and notably small-world networks often have a high transitivity and a low diameter.</p>
+<p>The local clustering coefficient , 𝑐𝑙(𝑣), gives for node 𝑣the proportion of neighbors of 𝑣 that are also connected to each other.</p>
+<p>Transitivity identify what is the percentage of edges that have a shared vertex in our graph
+he reciprocity of a directed graph is defined as the ratio of the number of edges pointing in both directions to the total number of edges in the graph. Formally,
+In graph theory, a clustering coefficient is a measure of the degree to which nodes in a graph tend to cluster together.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Atlético</span> <span style="color:#a6e22e">de</span> <span style="color:#a6e22e">Madrid</span> <span style="color:#a6e22e">metrics</span>:
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">GATM</span> = <span style="color:#a6e22e">Directed</span> <span style="color:#a6e22e">graph</span> <span style="color:#a6e22e">ATM</span>
+<span style="color:#a6e22e">GATM_TR</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">transitivity</span>(<span style="color:#a6e22e">GATM</span>),<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">GATM_RC</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">reciprocity</span>(<span style="color:#a6e22e">GATM</span>),<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">GATM_CL</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">average_clustering</span>(<span style="color:#a6e22e">GATM</span>),<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">GATM_SPL</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">average_shortest_path_length</span>(<span style="color:#a6e22e">GATM</span>),<span style="color:#ae81ff">3</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Real</span> <span style="color:#a6e22e">Madrid</span> <span style="color:#a6e22e">metrics</span>
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">GRMA</span> = <span style="color:#a6e22e">Directed</span> <span style="color:#a6e22e">graph</span> <span style="color:#a6e22e">RMA</span>
+<span style="color:#a6e22e">GRMA_TR</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">transitivity</span>(<span style="color:#a6e22e">GRMA</span>),<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">GRMA_RC</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">reciprocity</span>(<span style="color:#a6e22e">GRMA</span>),<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">GRMA_CL</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">average_clustering</span>(<span style="color:#a6e22e">GRMA</span>),<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">GRMA_SPL</span> = <span style="color:#a6e22e">round</span>(<span style="color:#a6e22e">nx</span>.<span style="color:#a6e22e">average_shortest_path_length</span>(<span style="color:#a6e22e">GRMA</span>),<span style="color:#ae81ff">3</span>)</code></pre></div>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">height_TR</span> = [<span style="color:#a6e22e">GATM_TR</span>,<span style="color:#a6e22e">GRMA_TR</span>]
+<span style="color:#a6e22e">height_CL</span> = [<span style="color:#a6e22e">GATM_CL</span>,<span style="color:#a6e22e">GRMA_CL</span>]
+<span style="color:#a6e22e">bars</span> = (<span style="color:#e6db74">&#34;ATM&#34;</span>, <span style="color:#e6db74">&#34;RMA&#34;</span>)
+<span style="color:#a6e22e">y_pos</span> = <span style="color:#66d9ef">range</span>(len(<span style="color:#a6e22e">bars</span>))
+
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">subplot</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">1</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Plotting</span> <span style="color:#a6e22e">Transitivity</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">height_TR</span>,<span style="color:#a6e22e">color</span>= [<span style="color:#e6db74">&#34;red&#34;</span>,<span style="color:#e6db74">&#34;white&#34;</span>],<span style="color:#a6e22e">edgecolor</span>= [<span style="color:#e6db74">&#34;black&#34;</span>])
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">title</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Transitivity</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">xticks</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">bars</span>)
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">enumerate</span>(<span style="color:#a6e22e">height_TR</span>):
+    <span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.10</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.01</span>, <span style="color:#a6e22e">str</span>(<span style="color:#a6e22e">v</span>))
+
+<span style="color:#960050;background-color:#1e0010">#</span><span style="color:#a6e22e">Plotting</span> <span style="color:#a6e22e">Clustering</span> <span style="color:#a6e22e">coefficient</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">subplot</span>(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">height_CL</span>,<span style="color:#a6e22e">color</span>= [<span style="color:#e6db74">&#34;red&#34;</span>,<span style="color:#e6db74">&#34;white&#34;</span>],<span style="color:#a6e22e">edgecolor</span>= [<span style="color:#e6db74">&#34;black&#34;</span>])
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">title</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Clustering</span> <span style="color:#a6e22e">coefficient</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">xticks</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">bars</span>)
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">enumerate</span>(<span style="color:#a6e22e">height_CL</span>):
+    <span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.10</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.01</span>, <span style="color:#a6e22e">str</span>(<span style="color:#a6e22e">v</span>))
+
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">tight_layout</span>()
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">show</span>()</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna24.JPG"/>
+</figure>
+</p>
+<p>Clustering coefficient indicates the transitivity of a network, in a passing network if player A wants to pass the ball to Player B, but this passing line is well covered, A will need to go through C to reach B, creating a path A -&gt; C -&gt; B, translating C as the middle player creating this connection who will have a high clustering coefficient.</p>
+<p>It is interesting to study how tightly the players interact in a team, clustering is a measure that inform us of the degree in which the nodes in network tend to cluster together.</p>
+<p>The global average clustering coefficient and transitivity for Real Madrid is higher than for the one between Atlético players, this translates in Atlético having a less balanced amount of passes involved in team.</p>
+<h3 id="36-g-reciprocity">3.6. g) Reciprocity</h3>
+<p>Reciprocity is a simplified version of transitivity, because it considers closed loops of length 2, which can only happen in directed graphs. Formally, if node v is connected to node u, u by connecting to v exhibits reciprocity.</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">height</span> = [<span style="color:#a6e22e">GATM_RC</span>,<span style="color:#a6e22e">GRMA_RC</span>]
+<span style="color:#a6e22e">bars</span> = (<span style="color:#e6db74">&#34;ATM&#34;</span>, <span style="color:#e6db74">&#34;RMA&#34;</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Create</span> <span style="color:#a6e22e">bars</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">choose</span> <span style="color:#a6e22e">color</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">height</span>,<span style="color:#a6e22e">color</span>= [<span style="color:#e6db74">&#34;red&#34;</span>,<span style="color:#e6db74">&#34;white&#34;</span>],<span style="color:#a6e22e">edgecolor</span>= [<span style="color:#e6db74">&#34;black&#34;</span>])
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">title</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">axis</span> <span style="color:#a6e22e">names</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">title</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Reciprocity</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Create</span> <span style="color:#a6e22e">names</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">xticks</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">bars</span>)
+
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">enumerate</span>(<span style="color:#a6e22e">height</span>):
+    <span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.10</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.01</span>, <span style="color:#a6e22e">str</span>(<span style="color:#a6e22e">v</span>))
+
+<span style="color:#a6e22e">reciprocity_plt</span> = <span style="color:#a6e22e">plt</span>
+<span style="color:#a6e22e">reciprocity_plt</span>.<span style="color:#a6e22e">show</span>()</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna25.JPG"/>
+</figure>
+</p>
+<p>The reciprocity of a directed graph is defined as the ratio of the number of edges pointing in both directions to the total number of edges in the graph.</p>
+<p>This can be translated as the ratio between the total number of passing lines which are bidirectional between two players and the total number of connections in the graph.</p>
+<p>We can say that out of the total number of pass connections between the Real Madrid players, nearly 90% of them are completed by both players in both directions and for Atlético a 75% oh all their passing lines.</p>
+<h3 id="36-h-shortest-path-length">3.6. h) Shortest Path Length</h3>
+<p>Average path length is a concept in network topology that is defined as the average number of steps along the shortest paths for all possible pairs of network nodes. It is a measure of the efficiency of information or mass transport on a network.</p>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">height</span> = [<span style="color:#a6e22e">GATM_SPL</span>,<span style="color:#a6e22e">GRMA_SPL</span>]
+<span style="color:#a6e22e">bars</span> = (<span style="color:#e6db74">&#34;ATM&#34;</span>, <span style="color:#e6db74">&#34;RMA&#34;</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Create</span> <span style="color:#a6e22e">bars</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">choose</span> <span style="color:#a6e22e">color</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">height</span>,<span style="color:#a6e22e">color</span>= [<span style="color:#e6db74">&#34;red&#34;</span>,<span style="color:#e6db74">&#34;white&#34;</span>],<span style="color:#a6e22e">edgecolor</span>= [<span style="color:#e6db74">&#34;black&#34;</span>])
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Add</span> <span style="color:#a6e22e">title</span> <span style="color:#a6e22e">and</span> <span style="color:#a6e22e">axis</span> <span style="color:#a6e22e">names</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">title</span>(<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">Shortest</span> <span style="color:#a6e22e">path</span> <span style="color:#a6e22e">length</span><span style="color:#960050;background-color:#1e0010">&#39;</span>)
+
+<span style="color:#960050;background-color:#1e0010">#</span> <span style="color:#a6e22e">Create</span> <span style="color:#a6e22e">names</span>
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">xticks</span>(<span style="color:#a6e22e">y_pos</span>, <span style="color:#a6e22e">bars</span>)
+
+<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#a6e22e">in</span> <span style="color:#a6e22e">enumerate</span>(<span style="color:#a6e22e">height</span>):
+    <span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">text</span>(<span style="color:#a6e22e">i</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">0.10</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">0.01</span>, <span style="color:#a6e22e">str</span>(<span style="color:#a6e22e">v</span>))
+
+<span style="color:#a6e22e">SPL_plt</span> = <span style="color:#a6e22e">plt</span>
+
+<span style="color:#a6e22e">plt</span>.<span style="color:#a6e22e">show</span>()</code></pre></div>
+<figure><img src="https://pedrolousantos.github.io/Pedro_Portfolio/images/sna26.JPG"/>
+</figure>
+</p>
+<p>In a passing network, the shortest path length d is the minimum number of players that must be traversed by the ball to go from one player to any other.</p>
+<p>In this case, having a low average shortest-path length is an indicator of a better connection between players, since the ball can travel from a player to other in a lower number of steps on average.</p>
+<p>As in previous metrics, we conclude that Real Madrid players were on average better connected in this final.</p>
+<h2 id="part-4-conclusion">Part 4: Conclusion</h2>
+<p>We were fascinated by our study and visualization of Atlético de Madrid and Real Madrid passing channels over the course of the Champions League final held on 24 of May of 2014.</p>
+<p>Very interesting conclusions can be made about the players importance in the match which translates the utility of passing networks from the point of view of a tactical analyst for example. This analysis helped us to understand the differences between number of passes (&ldquo;quantity&rdquo;) and other measures (&ldquo;quality&rdquo;) and the importance of social network analysis.</p>
+<p>On an individual level, Cristiano Ronaldo and Daniel Carvajal on Real Madrid side, and Gabi and Koke on Atlético de Madrid side were the players with better centrality measures indicating more connections and importance during the match.</p>
+<p>On a team level the higher transivity, clustering coefficient and reciprocity by Real Madrid, as well as lower shortest path length translate in more balanced passes between the different players, which is understandable taking into consideration Real Madrid was loosing since minute 36 until minute 93 and had a much higher possesion of the ball and total amount of passes.</p>
+<p>Higher eigenvector, betweenness and pagerank values concentrated in few players, higher dispersion, which Atlético showed with Gabi and Koke, generally indicates a dependency on a few important players and could be used by both teams to adjust their strategy:</p>
+<ul>
+<li>Real Madrid could focus on covering Gabi and Koke and avoid these critical connections showed during this match.</li>
+<li>Atlético could change the strategy and try to balance the importance of its network.</li>
+</ul>
+<p>However, it is worth looking beyond the differences in the network metrics and trying to find the reasons behind them. Since Atlético was winning the game it is understandable that they had less amount of passes by trying to explore fast counter-attacks to score a second goal and also trying to pass the ball more to their creative players who can easily maintain the ball and execute decisive passes. Also it was expected a higher pressure from the Real Madrid players in order to recover from the disadvantage in the result, so it was harder for Atlético to pass the ball between defenders for example.</p>
+<p>Further studies comparing different matches with different score evolution would be of interesting analyis but stand out of the scope of our current work and stand for further research later. This notebook can be used as template as this analysis can be easily replicated to other matches by only by changing the match_id and teams names if using the same data source.</p>
+<p>The Jupyter Notebook can be found at: <a href="https://github.com/pedrolousantos/SNA_Course-Football_Passes_Network">https://github.com/pedrolousantos/SNA_Course-Football_Passes_Network</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://pedrolousantos.github.io/Pedro_Portfolio/" >
+    &copy;  Go to Main Page 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+<a href="https://www.linkedin.com/in/pedrolousantos" target="_blank" class="link-transition linkedin link dib z-999 pt3 pt0-l mr1" title="LinkedIn link" rel="noopener" aria-label="follow on LinkedIn——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+<a href="https://github.com/pedrolousantos" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
